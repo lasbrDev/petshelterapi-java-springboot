@@ -16,10 +16,14 @@ import lombok.*;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private PetType type;
+        @Enumerated(EnumType.STRING)
+        private PetType petType;
         private String name;
         private String breed;
         private Integer age;
         private String color;
         private Float weight;
+        @ManyToOne
+        @JoinColumn(name = "shelter_id")
+        private Shelter shelter;
     }
