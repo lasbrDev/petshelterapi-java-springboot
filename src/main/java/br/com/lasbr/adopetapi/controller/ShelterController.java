@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+    @RestController
     @RequestMapping({ "/shelters" })
     public class ShelterController {
 
         private ShelterService service;
 
         public ResponseEntity<List<Shelter>> list() {
-            return ResponseEntity.ok(service.shelterList());
+            List<Shelter> shelters = service.shelterList();
+            return ResponseEntity.ok(shelters);
         }
     }
