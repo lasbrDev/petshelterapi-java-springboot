@@ -14,6 +14,7 @@ import java.util.List;
     @RequestMapping({ "/shelters" })
     public class ShelterController {
 
+        @Autowired
         private ShelterService service;
 
         @GetMapping

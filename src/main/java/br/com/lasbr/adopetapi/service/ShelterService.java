@@ -23,7 +23,7 @@ import java.util.List;
                 log.info("List of shelters successfully recovered. Total shelters: ", shelters.size());
                 return shelters;
             } catch (Exception e) {
-                log.error("Erro ao listar abrigos.", e);
+                log.error("Error listing shelters.", e);
                 throw new ShelterServiceException("Error listing shelters.", e);
             }
         }

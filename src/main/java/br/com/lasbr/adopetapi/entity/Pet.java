@@ -4,7 +4,9 @@ package br.com.lasbr.adopetapi.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-    @Entity(name = "pets")
+import java.util.List;
+
+@Entity(name = "pets")
     @Table(name = "Pet")
     @Getter
     @Data
@@ -26,4 +28,8 @@ import lombok.*;
         @ManyToOne
         @JoinColumn(name = "shelter_id")
         private Shelter shelter;
+
+        public List<Pet> getPets() {
+            return null;
+        }
     }
