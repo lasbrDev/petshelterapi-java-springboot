@@ -1,4 +1,4 @@
-package br.com.lasbr.adopetapi.entity.repository;
+package br.com.lasbr.adopetapi.repository;
 
 import br.com.lasbr.adopetapi.entity.Shelter;
 import org.springframework.data.jpa.repository.JpaRepository;
