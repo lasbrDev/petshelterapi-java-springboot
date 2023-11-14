@@ -9,5 +9,6 @@ import jakarta.persistence.EnumType;
         private static /* synthetic */ PetType[] $values() {
             return new PetType[] { PetType.GATO, PetType.CACHORRO };
         }
+
     }
 
