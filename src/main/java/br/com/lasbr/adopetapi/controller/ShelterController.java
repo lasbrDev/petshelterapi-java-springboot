@@ -1,7 +1,6 @@
 package br.com.lasbr.adopetapi.controller;
 
 import br.com.lasbr.adopetapi.entity.Shelter;
-import br.com.lasbr.adopetapi.repository.ShelterRepository;
 import br.com.lasbr.adopetapi.service.ShelterService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
