@@ -2,12 +2,10 @@ package br.com.lasbr.adopetapi.controller;
 
 import br.com.lasbr.adopetapi.entity.Pet;
 import br.com.lasbr.adopetapi.service.PertService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,12 @@ import java.util.List;
         public ResponseEntity<List<Pet>> petList(@PathVariable final String idOrName) {
             List<Pet> pets = service.petList(idOrName);
             return ResponseEntity.ok(pets);
+        }
+
+        @PostMapping({ "/{idOrName}/pets" })
+        public ResponseEntity<String> registerPet(
+                @PathVariable final String idOrName, @RequestBody @Valid final Pet pet) {
+            service.registerPet(Long.parseLong(idOrName), pet);
+            return ResponseEntity.ok("Pet registered successfully!");
         }
     }

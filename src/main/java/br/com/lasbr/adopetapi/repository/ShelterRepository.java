@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
         boolean existsByPhone(final String phone);
 
         boolean existsByEmail(final String email);
+
+        Shelter findByName(final String name);
     }
