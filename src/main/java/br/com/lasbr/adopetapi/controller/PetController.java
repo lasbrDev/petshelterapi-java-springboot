@@ -18,7 +18,7 @@ import java.util.List;
 
         @GetMapping("/{idOrName}")
         public ResponseEntity<List<Pet>> petList(@PathVariable final String idOrName) {
-            List<Pet> pets = service.petList(idOrName);
+            List<Pet> pets = service.getPetsByShelter(idOrName);
             return ResponseEntity.ok(pets);
         }
 

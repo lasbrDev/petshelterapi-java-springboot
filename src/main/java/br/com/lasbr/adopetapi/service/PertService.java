@@ -9,6 +9,7 @@ import br.com.lasbr.adopetapi.service.exception.ShelterServiceException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,20 +23,22 @@ import java.util.List;
         private final PetRepository petRepository;
         private final ShelterRepository shelterRepository;
 
-        public List<Pet> petList(String idOrName) {
+        public List<Pet> getPetsByShelter(String idOrName) {
+            Shelter shelter = getShelter(Long.valueOf(idOrName));
+            log.info("List of pets in shelter {} successfully retrieved.", shelter.getName());
+            return shelter.getPets();
+        }
+
+        private Shelter getShelter(String idOrName) {
             try {
                 Long id = Long.parseLong(idOrName);
-                return petRepository.findById(id).orElseThrow(EntityNotFoundException::new).getPets();
-            } catch (EntityNotFoundException enfe) {
-                log.error("Pet not found: {}", enfe.getMessage());
-                throw new PetNotfoundException("Pet not found.");
-            } catch (NumberFormatException e) {
-                try {
-                    return petRepository.findByName(idOrName).orElseThrow(EntityNotFoundException::new).getPets();
-                } catch (EntityNotFoundException enfe2) {
-                    log.error("Pet not found: {}", enfe2.getMessage());
-                    throw new PetNotfoundException("Pet not found.");
+                return shelterRepository.getReferenceById(id);
+            } catch (EntityNotFoundException | NumberFormatException e) {
+                Shelter shelter = shelterRepository.findByName(String.valueOf(idOrName));
+                if (shelter == null) {
+                    throw new ShelterServiceException("Shelter not found!");
                 }
+                return shelter;
             }
         }
 
@@ -44,16 +47,21 @@ import java.util.List;
             pet.setShelter(shelter);
             shelter.getPets().add(pet);
             shelterRepository.save(shelter);
+            log.info("Pet {} successfully registered in shelter {}.", pet.getName(), shelter.getName());
         }
         private Shelter getShelter(Long idOrName) {
             try {
                 Long id = Long.parseLong(String.valueOf(idOrName));
-                return shelterRepository.getReferenceById(id);
+                Shelter shelter = shelterRepository.getReferenceById(idOrName);
+                log.debug("Shelter found by ID: {}", shelter.getName());
+                return shelter;
             } catch (EntityNotFoundException | NumberFormatException e) {
                 Shelter shelter = shelterRepository.findByName(String.valueOf(idOrName));
                 if (shelter == null) {
+                    log.error("Shelter not found by ID or name: {}", idOrName);
                     throw new ShelterServiceException("Shelter not found.");
                 }
+                log.debug("Shelter found by name: {}", shelter.getName());
                 return shelter;
             }
         }

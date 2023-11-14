@@ -29,7 +29,4 @@ import java.util.List;
         @JoinColumn(name = "shelter_id")
         private Shelter shelter;
 
-        public List<Pet> getPets() {
-            return null;
-        }
     }
