@@ -31,10 +31,10 @@ Este projeto está constantemente evoluindo. Melhorias e novas funcionalidades e
 Esse projeto está sendo desenvolvido com JDK 17, então, antes de começar, certifique-se de ter instalado:
 
 - **Java 17**
-- **PostgreSQL** (pode ser instalado nativamente ou via Docker)
-- **Insomnia** (ou qualquer ferramenta similar para testar APIs)
-- **Docker** (se você preferir utilizar essa opção ao invés de instalar nativamente o SGBD)
-- **PGAdmin** (se você preferir usar uma ferramenta GUI ao invés do terminal, essa ferramenta pode te ajudar)
+- **PostgreSQL** (pode ser instalado nativamente ou via Docker.)
+- **Insomnia** (ou qualquer ferramenta similar para testar APIs.)
+- **Docker** (se você preferir utilizar essa opção ao invés de instalar nativamente o SGBD.)
+- **PGAdmin** (se você preferir utilizar de forma GUI ao invés do terminal, essa ferramenta pode te ajudar!)
 
 ## Configuração docker-compse.yml
 
