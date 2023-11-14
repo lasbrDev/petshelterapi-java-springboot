@@ -49,7 +49,7 @@ services:
       - my-network
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: lasBr01
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: adopet_db
     ports:
       - 5434:5432
