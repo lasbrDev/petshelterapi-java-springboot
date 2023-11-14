@@ -2,6 +2,9 @@ package br.com.lasbr.adopetapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-    @Entity
+    @Entity(name = "shelters")
+    @Table(name = "Shelter")
     @Data
     @AllArgsConstructor
     @EqualsAndHashCode(of = "id")
@@ -20,8 +24,13 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+        @NotBlank
         private String name;
+        @NotBlank
+        @Pattern(regexp = "\\d{11}")
         private String phone;
+        @NotBlank
+        @Email
         private String email;
         @OneToMany(mappedBy = "shelter", cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
         @JsonManagedReference
