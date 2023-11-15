@@ -24,13 +24,8 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        @NotBlank
         private String name;
-        @NotBlank
-        @Pattern(regexp = "\\d{11}")
         private String phone;
-        @NotBlank
-        @Email
         private String email;
         @OneToMany(mappedBy = "shelter", cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
         @JsonManagedReference
