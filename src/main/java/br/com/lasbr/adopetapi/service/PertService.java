@@ -41,7 +41,7 @@ import java.util.List;
                 return shelter;
             }
         }
-
+        @Transactional
         public void registerPet(Long idOrName, Pet pet) {
             Shelter shelter = getShelter(idOrName);
             pet.setShelter(shelter);

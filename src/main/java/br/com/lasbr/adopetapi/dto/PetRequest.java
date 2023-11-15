@@ -1,6 +1,7 @@
 package br.com.lasbr.adopetapi.dto;
 
 import br.com.lasbr.adopetapi.entity.PetType;
+import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
