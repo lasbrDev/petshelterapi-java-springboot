@@ -20,21 +20,13 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        @Enumerated(EnumType.STRING)
-        @NotNull
         private PetType petType;
-        @NotBlank
         private String name;
-        @NotBlank
         private String breed;
-        @NotNull
         private Integer age;
-        @NotBlank
         private String color;
-        @NotNull
         private Float weight;
         @ManyToOne
         @JoinColumn(name = "shelter_id")
         private Shelter shelter;
-
     }
