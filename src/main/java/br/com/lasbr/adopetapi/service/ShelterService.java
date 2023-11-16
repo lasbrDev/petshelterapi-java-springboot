@@ -1,5 +1,6 @@
 package br.com.lasbr.adopetapi.service;
 
+import br.com.lasbr.adopetapi.dto.ShelterRequest;
 import br.com.lasbr.adopetapi.entity.Shelter;
 import br.com.lasbr.adopetapi.repository.ShelterRepository;
 import br.com.lasbr.adopetapi.service.exception.ShelterServiceException;
@@ -29,18 +30,22 @@ import java.util.List;
         }
 
         @Transactional
-        public void shleterRegister(Shelter shelter) {
-            boolean nameAlreadyRegistered = repository.existsByName(shelter.getName());
-            boolean phoneAlreadyRegistered = repository.existsByPhone(shelter.getPhone());
-            boolean emailAlreadyRegistered = repository.existsByEmail(shelter.getEmail());
+        public void shleterRegister(ShelterRequest request) {
+            boolean nameAlreadyRegistered = repository.existsByName(request.name());
+            boolean phoneAlreadyRegistered = repository.existsByPhone(request.phone());
+            boolean emailAlreadyRegistered = repository.existsByEmail(request.email());
 
             if (nameAlreadyRegistered || phoneAlreadyRegistered || emailAlreadyRegistered) {
                 throw new ShelterServiceException("Data already registered for another shelter!");
             }
 
             try {
+                Shelter shelter = new Shelter();
+                shelter.setName(request.name());
+                shelter.setPhone(request.phone());
+                shelter.setEmail(request.email());
                 repository.save(shelter);
-                log.info("Shelter {} successfully registered.", shelter.getName());
+                log.info("Shelter {} successfully registered.", request.name());
             } catch (Exception e) {
                 log.error("Error during shelter registration: {}", e.getMessage());
                 throw new ShelterServiceException("Error during shelter registration.");
