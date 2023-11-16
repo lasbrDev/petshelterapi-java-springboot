@@ -111,7 +111,7 @@ Contribuições são bem-vindas! Leia as diretrizes de contribuição antes de e
 
 ## Licença
 
-Este projeto é licenciado sob a MIT.
+Este projeto é licenciado sob a [MIT License](LICENSE).
 
 ## Contato
 
