@@ -1,6 +1,7 @@
 package br.com.lasbr.adopetapi.controller;
 
 import br.com.lasbr.adopetapi.dto.ShelterRequest;
+import br.com.lasbr.adopetapi.dto.ShelterResponse;
 import br.com.lasbr.adopetapi.entity.Shelter;
 import br.com.lasbr.adopetapi.service.ShelterService;
 import jakarta.validation.Valid;
@@ -18,8 +19,8 @@ import java.util.List;
         private ShelterService service;
 
         @GetMapping
-        public ResponseEntity<List<Shelter>> list() {
-            List<Shelter> shelters = service.shelterList();
+        public ResponseEntity<List<ShelterResponse>> list() {
+            List<ShelterResponse> shelters = service.responses();
             return ResponseEntity.ok(shelters);
         }
 

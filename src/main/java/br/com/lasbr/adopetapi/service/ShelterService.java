@@ -1,6 +1,7 @@
 package br.com.lasbr.adopetapi.service;
 
 import br.com.lasbr.adopetapi.dto.ShelterRequest;
+import br.com.lasbr.adopetapi.dto.ShelterResponse;
 import br.com.lasbr.adopetapi.entity.Shelter;
 import br.com.lasbr.adopetapi.repository.ShelterRepository;
 import br.com.lasbr.adopetapi.service.exception.ShelterServiceException;
@@ -10,19 +11,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-    @Service
+@Service
     @RequiredArgsConstructor
     @Slf4j
     public class ShelterService {
 
         private final ShelterRepository repository;
 
-        public List<Shelter> shelterList() {
+        public List<ShelterResponse> responses() {
             try {
                 List<Shelter> shelters = repository.findAll();
                 log.info("List of shelters successfully recovered. Total shelters: ", shelters.size());
-                return shelters;
+                return shelters.stream().map(ShelterResponse::new).collect(Collectors.toList());
             } catch (Exception e) {
                 log.error("Error listing shelters.", e);
                 throw new ShelterServiceException("Error listing shelters.", e);
