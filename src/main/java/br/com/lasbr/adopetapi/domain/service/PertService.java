@@ -1,15 +1,13 @@
-package br.com.lasbr.adopetapi.service;
+package br.com.lasbr.adopetapi.domain.service;
 
-import br.com.lasbr.adopetapi.entity.Pet;
-import br.com.lasbr.adopetapi.entity.Shelter;
-import br.com.lasbr.adopetapi.repository.PetRepository;
-import br.com.lasbr.adopetapi.repository.ShelterRepository;
-import br.com.lasbr.adopetapi.service.exception.PetNotfoundException;
-import br.com.lasbr.adopetapi.service.exception.ShelterServiceException;
+import br.com.lasbr.adopetapi.adapter.data.entities.Pet;
+import br.com.lasbr.adopetapi.adapter.data.entities.Shelter;
+import br.com.lasbr.adopetapi.adapter.data.repositories.PetRepository;
+import br.com.lasbr.adopetapi.adapter.data.repositories.ShelterRepository;
+import br.com.lasbr.adopetapi.adapter.data.exception.ShelterServiceException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,10 +1,10 @@
-package br.com.lasbr.adopetapi.service;
+package br.com.lasbr.adopetapi.domain.service;
 
-import br.com.lasbr.adopetapi.dto.ShelterRequest;
-import br.com.lasbr.adopetapi.dto.ShelterResponse;
-import br.com.lasbr.adopetapi.entity.Shelter;
-import br.com.lasbr.adopetapi.repository.ShelterRepository;
-import br.com.lasbr.adopetapi.service.exception.ShelterServiceException;
+import br.com.lasbr.adopetapi.domain.dto.ShelterRequest;
+import br.com.lasbr.adopetapi.domain.dto.ShelterResponse;
+import br.com.lasbr.adopetapi.adapter.data.entities.Shelter;
+import br.com.lasbr.adopetapi.adapter.data.repositories.ShelterRepository;
+import br.com.lasbr.adopetapi.adapter.data.exception.ShelterServiceException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

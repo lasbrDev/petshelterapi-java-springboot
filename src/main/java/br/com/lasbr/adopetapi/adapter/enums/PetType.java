@@ -1,8 +1,6 @@
-package br.com.lasbr.adopetapi.entity;
+package br.com.lasbr.adopetapi.adapter.enums;
 
-import jakarta.persistence.EnumType;
-
-    public enum PetType {
+public enum PetType {
 
         GATO, CACHORRO;
         

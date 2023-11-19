@@ -1,14 +1,11 @@
-package br.com.lasbr.adopetapi.entity;
+package br.com.lasbr.adopetapi.adapter.data.entities;
 
 
+import br.com.lasbr.adopetapi.adapter.enums.PetType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.util.List;
-
-    @Entity(name = "pets")
+@Entity(name = "pets")
     @Table(name = "Pet")
     @Getter
     @Data

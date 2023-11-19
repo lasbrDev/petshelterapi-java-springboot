@@ -1,6 +1,6 @@
-package br.com.lasbr.adopetapi.dto;
+package br.com.lasbr.adopetapi.domain.dto;
 
-import br.com.lasbr.adopetapi.entity.Shelter;
+import br.com.lasbr.adopetapi.adapter.data.entities.Shelter;
 
     public record ShelterResponse(
             Long id, String name, String phone, String email) {

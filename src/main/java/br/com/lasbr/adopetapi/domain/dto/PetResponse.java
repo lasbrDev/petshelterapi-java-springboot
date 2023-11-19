@@ -1,7 +1,7 @@
-package br.com.lasbr.adopetapi.dto;
+package br.com.lasbr.adopetapi.domain.dto;
 
-import br.com.lasbr.adopetapi.entity.Pet;
-import br.com.lasbr.adopetapi.entity.PetType;
+import br.com.lasbr.adopetapi.adapter.data.entities.Pet;
+import br.com.lasbr.adopetapi.adapter.enums.PetType;
 
     public record PetResponse(
             Long id,
