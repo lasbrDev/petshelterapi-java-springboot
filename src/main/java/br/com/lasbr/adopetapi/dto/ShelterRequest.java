@@ -10,7 +10,7 @@ import java.util.List;
         @NotBlank
         String name,
         @NotBlank
-        @Pattern(regexp = "\\d{11}")
+        @Pattern(regexp = "\\d{12}")
         String phone,
         @NotBlank
         @Email
