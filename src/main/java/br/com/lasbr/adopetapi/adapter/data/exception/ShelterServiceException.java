@@ -1,4 +1,4 @@
-package br.com.lasbr.adopetapi.service.exception;
+package br.com.lasbr.adopetapi.adapter.data.exception;
 
     public class ShelterServiceException extends RuntimeException {
 

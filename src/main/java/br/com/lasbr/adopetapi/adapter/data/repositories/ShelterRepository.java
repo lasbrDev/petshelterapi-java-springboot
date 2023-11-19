@@ -1,6 +1,6 @@
-package br.com.lasbr.adopetapi.repository;
+package br.com.lasbr.adopetapi.adapter.data.repositories;
 
-import br.com.lasbr.adopetapi.entity.Shelter;
+import br.com.lasbr.adopetapi.adapter.data.entities.Shelter;
 import org.springframework.data.jpa.repository.JpaRepository;
 
     public interface ShelterRepository extends JpaRepository<Shelter, Long> {

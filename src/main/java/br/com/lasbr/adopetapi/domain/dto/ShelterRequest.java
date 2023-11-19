@@ -1,4 +1,4 @@
-package br.com.lasbr.adopetapi.dto;
+package br.com.lasbr.adopetapi.domain.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,9 +1,8 @@
-package br.com.lasbr.adopetapi.controller;
+package br.com.lasbr.adopetapi.adapter.controller;
 
-import br.com.lasbr.adopetapi.dto.ShelterRequest;
-import br.com.lasbr.adopetapi.dto.ShelterResponse;
-import br.com.lasbr.adopetapi.entity.Shelter;
-import br.com.lasbr.adopetapi.service.ShelterService;
+import br.com.lasbr.adopetapi.domain.dto.ShelterRequest;
+import br.com.lasbr.adopetapi.domain.dto.ShelterResponse;
+import br.com.lasbr.adopetapi.domain.service.ShelterService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

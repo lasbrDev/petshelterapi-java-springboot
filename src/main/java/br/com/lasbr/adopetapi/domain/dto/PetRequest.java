@@ -1,7 +1,6 @@
-package br.com.lasbr.adopetapi.dto;
+package br.com.lasbr.adopetapi.domain.dto;
 
-import br.com.lasbr.adopetapi.entity.PetType;
-import jakarta.persistence.Column;
+import br.com.lasbr.adopetapi.adapter.enums.PetType;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;

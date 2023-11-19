@@ -1,6 +1,6 @@
-package br.com.lasbr.adopetapi.repository;
+package br.com.lasbr.adopetapi.adapter.data.repositories;
 
-import br.com.lasbr.adopetapi.entity.Pet;
+import br.com.lasbr.adopetapi.adapter.data.entities.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
